@@ -14,31 +14,27 @@
   },
   "license": "MIT",
   "dependencies": {
-    "hoek": "2.x.x"
+    "autoprefixer-stylus": "0.8.0",
+    "hoek": "2.x.x",
+    "jade": "1.11.x",
+    "jeet": "6.1.x",
+    "rupture": "0.6.1",
+    "stylus": "0.52.4",
+    "vision": "3.x.x"
   },
   "devDependencies": {
-    "autoprefixer-stylus": "0.8.0",
-    "clean-webpack-plugin": "0.1.3",
     "code": "1.x.x",
-    "css-loader": "0.19.0",
-    "extract-text-webpack-plugin": "0.8.2",
     "hapi": "9.x.x",
-    "html-loader": "0.3.0",
     "inert": "3.x.x",
-    "jade-html-loader": "0.0.3",
-    "jeet": "6.1.x",
     "joi": "6.x.x",
     "lab": "5.x.x",
-    "rupture": "0.6.1",
-    "semistandard": "7.x.x",
-    "style-loader": "0.12.x",
-    "stylus-loader": "1.3.x",
-    "webpack": "1.12.2"
+    "semistandard": "7.x.x"
   },
   "scripts": {
-    "test": "semistandard && lab -v -t 100 -a code",
-    "webpack": "webpack -w -c -v",
-    "prepublish": "webpack"
+    "build": "stylus style/main.styl -o public/styles.css -I ./node_modules/jeet/stylus -u ./node_modules/autoprefixer-stylus -u ./node_modules/rupture -c",
+    "dev": "node dev-server & stylus assets/style/main.styl -o build/styles.css -I ./node_modules/jeet/stylus -u ./node_modules/autoprefixer-stylus -u ./node_modules/rupture -c -w",
+    "prepublish": "npm run build",
+    "test": "semistandard && lab -v -t 100 -a code"
   },
   "keywords": [
     "hapi",

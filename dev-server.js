@@ -1,5 +1,4 @@
 var Assert = require('assert');
-
 var Hapi = require('hapi');
 
 var server = new Hapi.Server();
@@ -12,7 +11,8 @@ server.register([{
     endpoint: '/foobar'
   }
 },
-require('inert')], function (err) {
+require('inert'),
+require('vision')], function (err) {
   Assert.ifError(err);
 
   server.start(function () {

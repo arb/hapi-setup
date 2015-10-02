@@ -1,8 +1,10 @@
 doctype html
 html(lang="en")
   head
-    title A Jade Page
+    title Hapi Setup
+    link(href="/public/styles.css", rel="stylesheet")
   body
-    h1 Welcome to the home page view
-    p Boy, this sure is ugly without any CSS!
-    script(src="/public/main.js")
+    h1 This is your hapi-setup!
+    p Use this page to get a quick view of all the important configuration settings used in the currently running hapi server.
+    div.configuration
+      p #{runtime.execPath}

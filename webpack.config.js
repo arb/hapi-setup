@@ -1,7 +1,7 @@
 var Path = require('path');
 
 var Clean = require('clean-webpack-plugin');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var Webpack = require('webpack');
 
 var Rupture = require('rupture');
@@ -12,12 +12,11 @@ var plugins = [jadeExtract];
 
 plugins.push(new Webpack.optimize.UglifyJsPlugin({
   compress: {
-      warnings: false
+    warnings: false
   }
 }));
 plugins.push(new Clean(['build']));
 plugins.push(new Webpack.optimize.OccurenceOrderPlugin(true));
-
 
 module.exports = {
   context: Path.join(process.cwd(), 'assets'),

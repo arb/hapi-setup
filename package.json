@@ -31,7 +31,7 @@
     "semistandard": "7.x.x"
   },
   "scripts": {
-    "build": "stylus style/main.styl -o public/styles.css -I ./node_modules/jeet/stylus -u ./node_modules/autoprefixer-stylus -u ./node_modules/rupture -c",
+    "build": "stylus assets/style/main.styl -o build/styles.css -I ./node_modules/jeet/stylus -u ./node_modules/autoprefixer-stylus -u ./node_modules/rupture -c",
     "dev": "node dev-server & stylus assets/style/main.styl -o build/styles.css -I ./node_modules/jeet/stylus -u ./node_modules/autoprefixer-stylus -u ./node_modules/rupture -c -w",
     "prepublish": "npm run build",
     "test": "semistandard && lab -v -t 100 -a code"
